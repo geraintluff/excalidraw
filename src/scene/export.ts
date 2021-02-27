@@ -131,6 +131,10 @@ export const exportToSvg = (
   <defs>
     <style>
       @font-face {
+        font-family: "Geraint-v3";
+        src: url("/style/blog/fonts/Geraint-v3/Geraint-Dense.woff2");
+      }
+      @font-face {
         font-family: "Virgil";
         src: url("https://excalidraw.com/FG_Virgil.woff2");
       }
