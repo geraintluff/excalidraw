@@ -1,7 +1,7 @@
 import { FontFamily } from "./element/types";
 import cssVariables from "./css/variables.module.scss";
 
-export const APP_NAME = "Excalidraw";
+export const APP_NAME = "Excalidraw (Geraint-v3)";
 
 export const DRAGGING_THRESHOLD = 10; // px
 export const LINE_CONFIRM_THRESHOLD = 8; // px
@@ -62,7 +62,7 @@ export const CLASSES = {
 
 // 1-based in case we ever do `if(element.fontFamily)`
 export const FONT_FAMILY = {
-  1: "Virgil",
+  1: "Geraint-v3",
   2: "Helvetica",
   3: "Cascadia",
 } as const;
