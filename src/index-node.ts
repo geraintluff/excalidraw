@@ -54,6 +54,7 @@ const elements = [
   },
 ];
 
+registerFont("./public/Geraint-Dense.ttf", { family: "Geraint-Dense" });
 registerFont("./public/FG_Virgil.ttf", { family: "Virgil" });
 registerFont("./public/Cascadia.ttf", { family: "Cascadia" });
 

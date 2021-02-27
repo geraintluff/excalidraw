@@ -103,6 +103,8 @@ export const measureText = (text: string, font: FontString) => {
     .join("\n");
   const width = line.offsetWidth;
   const height = line.offsetHeight;
+  // Replace the final line with a single character
+  line.innerText = line.innerText.replace(/[^\n]*$/, " ");
   // Now creating 1px sized item that will be aligned to baseline
   // to calculate baseline shift
   const span = document.createElement("span");
