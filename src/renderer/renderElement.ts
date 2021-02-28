@@ -212,14 +212,16 @@ export const generateRoughOptions = (element: ExcalidrawElement): Options => {
     // for non-solid strokes, increase the width a bit to make it visually
     // similar to solid strokes, because we're also disabling multiStroke
     strokeWidth:
-      element.strokeStyle !== "solid"
+      // Geraint: don't increase unless we have multistroke
+      element.strokeStyle !== "solid" && element.roughness !== 0
         ? element.strokeWidth + 0.5
         : element.strokeWidth,
     // when increasing strokeWidth, we must explicitly set fillWeight and
     // hachureGap because if not specified, roughjs uses strokeWidth to
     // calculate them (and we don't want the fills to be modified)
     fillWeight: element.strokeWidth / 2,
-    hachureGap: element.strokeWidth * 4,
+    // Geraint: I actually *do* want the density to increase for thicker lines
+    hachureGap: (2 + element.strokeWidth * 0.5) * 2,
     roughness: element.roughness,
     stroke: element.strokeColor,
   };

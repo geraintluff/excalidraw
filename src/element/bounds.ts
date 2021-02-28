@@ -213,9 +213,11 @@ export const getArrowheadPoints = (
   const ny = (y2 - y1) / distance;
 
   const size = {
-    arrow: 30,
+    // Geraint: slightly smaller arrows
+    arrow: 20 + element.strokeWidth * 2.5 + element.roughness * 5,
     bar: 15,
-    dot: 15,
+    // Geraint: dot depends on stroke and roughness
+    dot: (5 + element.strokeWidth * 2) * (1 + element.roughness * 0.15),
   }[arrowhead]; // pixels (will differ for each arrowhead)
 
   const length = element.points.reduce((total, [cx, cy], idx, points) => {
@@ -226,7 +228,8 @@ export const getArrowheadPoints = (
   // Scale down the arrowhead until we hit a certain size so that it doesn't look weird.
   // This value is selected by minimizing a minimum size with the whole length of the
   // arrowhead instead of last segment of the arrowhead.
-  const minSize = Math.min(size, length / 2);
+  // Geraint: reduced from 0.5
+  const minSize = Math.min(size, length * 0.43);
   const xs = x2 - nx * minSize;
   const ys = y2 - ny * minSize;
 
