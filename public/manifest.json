@@ -14,13 +14,13 @@
       "sizes": "256x256"
     }
   ],
-  "start_url": "/",
+  "start_url": "/excalidraw/",
   "display": "standalone",
   "theme_color": "#000000",
   "background_color": "#ffffff",
   "file_handlers": [
     {
-      "action": "/",
+      "action": "/excalidraw/",
       "accept": {
         "application/vnd.excalidraw+json": [".excalidraw"]
       }
